@@ -16,3 +16,9 @@ provider:
 functions:
   twitch-hosting-prototype:
     handler: src/handler.entrypoint
+    environment:
+      GOOGLE_CALENDAR_CLIENT_EMAIL: ${env:GOOGLE_CALENDAR_CLIENT_EMAIL}
+      GOOGLE_CALENDAR_CALENDAR_ID: ${env:GOOGLE_CALENDAR_CALENDAR_ID}
+      GOOGLE_CALENDAR_PRIVATE_KEY: ${env:GOOGLE_CALENDAR_PRIVATE_KEY}
+      TWITCH_USERNAME: ${env:TWITCH_USERNAME}
+      TWITCH_TOKEN: ${env:TWITCH_TOKEN}
