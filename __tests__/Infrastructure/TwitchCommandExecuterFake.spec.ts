@@ -10,7 +10,18 @@ test("host/executedHostがtrueになる", async () => {
   expect(twitchCommandExecuterFake.executedHost).toBe(true);
 });
 
-test("host/executedUnhostがtrueになる", async () => {
+test("host/hostedAccountNameがホストした配信のものになる", async () => {
+  const twitchCommandExecuterFake = new TwitchCommandExecuterFake();
+  const accountNameToHost = "wand_ta";
+
+  expect(twitchCommandExecuterFake.hostedAccountName).toBe("");
+
+  await twitchCommandExecuterFake.host(accountNameToHost);
+
+  expect(twitchCommandExecuterFake.hostedAccountName).toBe(accountNameToHost);
+});
+
+test("unhost/executedUnhostがtrueになる", async () => {
   const twitchCommandExecuterFake = new TwitchCommandExecuterFake();
 
   expect(twitchCommandExecuterFake.executedUnhost).toBe(false);

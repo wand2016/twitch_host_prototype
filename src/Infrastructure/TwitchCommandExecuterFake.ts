@@ -6,9 +6,11 @@ export default class TwitchCommandExecuterFake implements TwitchCommandExecuter 
 
   public executedHost = false;
   public executedUnhost = false;
+  public hostedAccountName = "";
 
-  public async host(_: string): Promise<void> {
+  public async host(streamerAccountName: string): Promise<void> {
     this.executedHost = true;
+    this.hostedAccountName = streamerAccountName;
   }
 
   public async unhost(): Promise<void> {
