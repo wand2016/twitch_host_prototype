@@ -2,7 +2,9 @@
 
 import { calendar_v3 } from "googleapis";
 import GoogleCalendarGateway from "@app/Infrastructure/GoogleCalendarGateway";
+import { injectable } from "inversify";
 
+@injectable()
 export default class GoogleCalendarGatewayFake implements GoogleCalendarGateway {
 
   constructor(private events: calendar_v3.Schema$Event[]) { }

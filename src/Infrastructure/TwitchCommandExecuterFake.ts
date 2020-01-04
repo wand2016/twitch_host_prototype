@@ -1,7 +1,9 @@
 "use strict";
 
 import TwitchCommandExecuter from "@app/Domain/TwitchCommandExecuter";
+import { injectable } from "inversify";
 
+@injectable()
 export default class TwitchCommandExecuterFake implements TwitchCommandExecuter {
 
   public executedHost = false;

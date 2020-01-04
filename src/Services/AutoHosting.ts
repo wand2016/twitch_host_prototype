@@ -1,9 +1,9 @@
 "use strict";
 
+import TYPES from "@app/types";
+import { inject, injectable } from "inversify";
 import HostReservationRepository from "@app/Domain/HostReservationRepository";
 import TwitchCommandExecuter from "@app/Domain/TwitchCommandExecuter";
-import { inject, injectable } from "inversify";
-import TYPES from "@app/types";
 import SearchCriteria from "@app/Domain/SearchCriteria";
 import HostReservation from "@app/Domain/HostReservation";
 

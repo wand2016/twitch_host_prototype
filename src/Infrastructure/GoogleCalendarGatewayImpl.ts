@@ -2,8 +2,10 @@
 
 import { google, calendar_v3 } from "googleapis";
 import { JWT } from "google-auth-library";
+import { injectable } from "inversify";
 import GoogleCalendarGateway from "@app/Infrastructure/GoogleCalendarGateway";
 
+@injectable()
 export default class GoogleCalendarGatewayImpl implements GoogleCalendarGateway {
   /**
    * @readonly

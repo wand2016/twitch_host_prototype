@@ -2,7 +2,9 @@
 
 import TwitchCommandExecuter from "@app/Domain/TwitchCommandExecuter";
 import tmi from "tmi.js";
+import { injectable } from "inversify";
 
+@injectable()
 export default class TwitchCommandExecuterImpl implements TwitchCommandExecuter {
 
   /**

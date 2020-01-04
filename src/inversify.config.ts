@@ -9,13 +9,16 @@ import TwitchCommandExecuterImpl from "@app/Infrastructure/TwitchCommandExecuter
 import HostReservationRepository from "@app/Domain/HostReservationRepository";
 import HostReservationRepositoryImpl from "@app/Infrastructure/HostReservationRepositoryImpl";
 import HostReservationMapper from "@app/Mappers/HostReservationMapper";
+import AutoHosting from "@app/Services/AutoHosting";
 
 const container: Container = new Container();
 
-container.bind<HostReservationRepository>(TYPES.HostReservationRepository).to(HostReservationRepositoryImpl);
+container.bind<AutoHosting>(TYPES.AutoHosting).to(AutoHosting);
+
+container.bind<HostReservationRepository>(TYPES.HostReservationRepository).toService(TYPES.HostReservationRepositoryImpl);
 container.bind<HostReservationRepositoryImpl>(TYPES.HostReservationRepositoryImpl).to(HostReservationRepositoryImpl);
 
-container.bind<GoogleCalendarGateway>(TYPES.GoogleCalendarGateway).to(GoogleCalendarGatewayImpl);
+container.bind<GoogleCalendarGateway>(TYPES.GoogleCalendarGateway).toService(TYPES.GoogleCalendarGatewayImpl);
 container.bind<GoogleCalendarGatewayImpl>(TYPES.GoogleCalendarGatewayImpl)
   .toConstantValue(
     new GoogleCalendarGatewayImpl(
@@ -25,7 +28,7 @@ container.bind<GoogleCalendarGatewayImpl>(TYPES.GoogleCalendarGatewayImpl)
     ),
   );
 
-container.bind<TwitchCommandExecuter>(TYPES.TwitchCommandExecuter).to(TwitchCommandExecuterImpl);
+container.bind<TwitchCommandExecuter>(TYPES.TwitchCommandExecuter).toService(TYPES.TwitchCommandExecuterImpl);
 container.bind<TwitchCommandExecuter>(TYPES.TwitchCommandExecuterImpl)
   .toConstantValue(
     new TwitchCommandExecuterImpl(

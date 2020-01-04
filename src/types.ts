@@ -1,4 +1,5 @@
 const TYPES = {
+  AutoHosting: Symbol.for("AutoHosting"),
   HostReservationRepository: Symbol.for("HostReservationRepository"),
   HostReservationRepositoryImpl: Symbol.for("HostReservationRepositoryImpl"),
   GoogleCalendarGateway: Symbol.for("GoogleCalendarGateway"),
