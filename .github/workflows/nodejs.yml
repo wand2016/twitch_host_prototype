@@ -40,3 +40,9 @@ jobs:
     - name: Deployment by Serverless Framework
       run: |
         npm run deploy
+      env:
+        TWITCH_USERNAME: ${{ secrets.TWITCH_USERNAME }}
+        TWITCH_TOKEN: ${{ secrets.TWITCH_TOKEN }}
+        GOOGLE_CALENDAR_CLIENT_EMAIL: ${{ secrets.GOOGLE_CALENDAR_CLIENT_EMAIL }}
+        GOOGLE_CALENDAR_PRIVATE_KEY: ${{ secrets.GOOGLE_CALENDAR_PRIVATE_KEY }}
+        GOOGLE_CALENDAR_CALENDAR_ID: ${{ secrets.GOOGLE_CALENDAR_CALENDAR_ID }}
