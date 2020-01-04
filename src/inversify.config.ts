@@ -4,9 +4,12 @@ import { Container } from "inversify";
 import TYPES from "@app/types";
 import GoogleCalendarGateway from "@app/Infrastructure/GoogleCalendarGateway";
 import GoogleCalendarGatewayImpl from "@app/Infrastructure/GoogleCalendarGatewayImpl";
+import TwitchCommandExecuter from "./Domain/TwitchCommandExecuter";
+import TwitchCommandExecuterImpl from "./Infrastructure/TwitchCommandExecuterImpl";
 
 const container: Container = new Container();
 
+container.bind<GoogleCalendarGateway>(TYPES.GoogleCalendarGateway).to(GoogleCalendarGatewayImpl);
 container.bind<GoogleCalendarGatewayImpl>(TYPES.GoogleCalendarGatewayImpl)
   .toConstantValue(
     new GoogleCalendarGatewayImpl(
@@ -16,6 +19,14 @@ container.bind<GoogleCalendarGatewayImpl>(TYPES.GoogleCalendarGatewayImpl)
     ),
   );
 
-container.bind<GoogleCalendarGateway>(TYPES.GoogleCalendarGateway).to(GoogleCalendarGatewayImpl);
+container.bind<TwitchCommandExecuter>(TYPES.TwitchCommandExecuter).to(TwitchCommandExecuterImpl);
+container.bind<TwitchCommandExecuter>(TYPES.TwitchCommandExecuterImpl)
+  .toConstantValue(
+    new TwitchCommandExecuterImpl(
+      process.env.TWITCH_USERNAME,
+      process.env.TWITCH_TOKEN,
+    ),
+  );
+
 
 export default container;
