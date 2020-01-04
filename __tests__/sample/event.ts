@@ -8,7 +8,7 @@ const event: calendar_v3.Schema$Event = {
   htmlLink: "https://www.google.com/calendar/event?eid=NDd2bGU1amFyaW8ydWhzYzM0bWsxaGFpZXAgdHdpdGNoLmhvc3Rpbmcuc3JAbQ",
   created: "2020-01-04T12:13:08.000Z",
   updated: "2020-01-04T12:13:08.218Z",
-  summary: "an_awesome_streamer\n\nblabla",
+  summary: "an_awesome_streamer hogehoge",
   creator: { email: "***", self: true },
   organizer: { email: "***", self: true },
   start: { dateTime: "2020-01-04T17:00:00+09:00" },

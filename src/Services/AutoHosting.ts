@@ -19,10 +19,13 @@ export default class AutoHosting {
 
     if (!hostReservation) {
       await this.twitchCommandExecutor.unhost();
+      console.log("unhosted");
       return;
     }
 
-    await this.twitchCommandExecutor.host(hostReservation.getStreamerAccountName());
+    const streamerAccountName = hostReservation.getStreamerAccountName();
+    await this.twitchCommandExecutor.host(streamerAccountName);
+    console.log(`hosted ${streamerAccountName}`);
   }
 
   private async findHostReservationOrNull(): Promise<HostReservation|null> {

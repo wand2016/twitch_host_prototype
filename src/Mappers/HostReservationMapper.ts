@@ -9,7 +9,7 @@ import { injectable } from "inversify";
 export default class HostReserationMapper {
   public createFromGoogleCalendarEvent(event: calendar_v3.Schema$Event): HostReservation {
     return new HostReservation(
-      event.summary.split("\n")[0],
+      event.summary.split(" ")[0].trim(),
       new DatetimeRange(
         new Date(event.start.dateTime),
         new Date(event.end.dateTime),
