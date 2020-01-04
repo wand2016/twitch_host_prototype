@@ -29,3 +29,14 @@ jobs:
         GOOGLE_CALENDAR_CLIENT_EMAIL: ${{ secrets.GOOGLE_CALENDAR_CLIENT_EMAIL }}
         GOOGLE_CALENDAR_PRIVATE_KEY: ${{ secrets.GOOGLE_CALENDAR_PRIVATE_KEY }}
         GOOGLE_CALENDAR_CALENDAR_ID: ${{ secrets.GOOGLE_CALENDAR_CALENDAR_ID }}
+
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_DEPLOY }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_DEPLOY }}
+        aws-region: ap-northeast-1
+
+    - name: Deployment by Serverless Framework
+      run: |
+        npm run deploy
