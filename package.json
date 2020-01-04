@@ -8,10 +8,21 @@
     "tmi.js": "^1.5.0"
   },
   "devDependencies": {
-    "@types/tmi.js": "^1.4.0"
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-typescript": "^7.7.7",
+    "@types/jest": "^24.0.25",
+    "@types/node": "^13.1.4",
+    "@types/tmi.js": "^1.4.0",
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.2.0",
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.4"
   },
   "scripts": {
-    "test": "node ./src/test_irc.js && node ./src/test_calendar.js && exit 0"
+    "lint": "tslint src/**/*.ts __tests__/**/*.ts",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
