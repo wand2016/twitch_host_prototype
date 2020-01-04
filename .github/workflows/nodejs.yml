@@ -19,6 +19,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install, build, and test
       run: |
+        npm i
         npm run test
       env:
         CI: true
+        TWITCH_USERNAME: ${{ secrets.TWITCH_USERNAME }}
+        TWITCH_TOKEN: ${{ secrets.TWITCH_TOKEN }}
