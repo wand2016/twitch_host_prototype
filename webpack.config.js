@@ -6,7 +6,7 @@ module.exports = {
   entry: slsw.lib.entries,
   devtool: 'source-map',
   resolve: {
-    extensions: ['.js', '.json', '.tsx'],
+    extensions: ['.js', '.json', '.ts'],
     alias: {
       "@app": path.resolve(__dirname, 'src')
     }
