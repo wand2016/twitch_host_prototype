@@ -1,5 +1,5 @@
 import HostReservationMapper from "@app/Mappers/HostReservationMapper";
-import event from "./sample/event";
+import event from "@tests/sample/event";
 import HostReservation from "@app/Domain/HostReservation";
 import DatetimeRange from "@app/Domain/DatetimeRange";
 

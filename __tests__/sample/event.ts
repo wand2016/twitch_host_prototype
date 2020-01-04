@@ -15,7 +15,7 @@ const event: calendar_v3.Schema$Event = {
   end: { dateTime: "2020-01-04T18:00:00+09:00" },
   iCalUID: "47vle5jario2uhsc34mk1haiep@google.com",
   sequence: 0,
-  reminders: { useDefault: true }
-}
+  reminders: { useDefault: true },
+};
 
 export default event;
